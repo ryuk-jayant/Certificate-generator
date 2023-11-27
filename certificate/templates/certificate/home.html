@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Certificate List</title>
+</head>
+<body>
+    <div class="w-[70vw] absolute left-[10%] bg-gray-100 h-[70vw] border-3">
+    <h1 class="font-semibold text-5xl text-center">Certificate List</h1>
+    <button class="cursor-pointer ml-5 px-5 py-2 bg-blue-400 rounded-lg  font-semibold"><a href={% url "Add" %}>Add</a></button>
+    {%for i in list%}
+    <div class="my-10 ml-10 flex justify-between align-items-center">
+       <a href={% url "certificate_template" pk=i.pk %}> {{i.name}}</a>
+       <div class="border-2">
+       <button class="bg-red-300 p-2 mr-10"><a href={% url "remove_element" pk=i.pk %}>❌</a></button>
+       <button class="bg-green-300 p-2 mr-10"><a href={% url "Mail_cert" pk=i.pk %}>✔️</a></button>
+       </div>
+    </div>
+    {% endfor %}
+    </div>
+</body>
+</html>

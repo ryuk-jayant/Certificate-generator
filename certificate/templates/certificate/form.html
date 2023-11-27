@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+<div class="border-2 bg-gray-100 max-w-[40vw] absolute right-[35%] top-[10%]">
+    <h1 class="text-3xl font-semibold m-10">Add Data</h1>
+    <div class="m-10">
+    <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+    {% comment %} {{form.as_p}} {% endcomment %}
+    <div class="m-5">
+    <input type="file" name="csv_file" id="csv_file" required="True" class="">
+    </div>
+    <button type="submit" class="px-4 py-3 mt-2 bg-green-400 text-white font-semibold rounded-2xl">submit</button>
+    </form>
+    </div>
+</div>
+</body>
+</html>
